@@ -1,5 +1,3 @@
 node_modules
 dist
 .cache
-src/style/calculator.css
-src/style/calculator.css.map

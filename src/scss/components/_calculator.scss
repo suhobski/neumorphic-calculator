@@ -1,0 +1,11 @@
+.calculator {
+  @include figure-style;
+
+  grid-column-start: 2;
+  grid-row-start: 2;
+  
+  width: 200px;
+  height: 400px;
+
+  overflow: hidden;
+}

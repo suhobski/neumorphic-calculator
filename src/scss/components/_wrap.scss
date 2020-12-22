@@ -1,0 +1,37 @@
+.wrap {
+  position: relative;
+
+  grid-area: w;
+  justify-self: center;
+
+  overflow: hidden;
+  background: #F0F0F3;
+  background-image: url(../img/dots-rectangle.svg), url(../img/dots-rectangle.svg);
+  background-repeat: no-repeat;
+  background-position: 271px 63px, 473px 346px;
+
+  
+  &__rectanglle {
+    @include figure-style;
+    @include abs-position(109.82px, 125.65px, 56.57px, 129.7px);
+  }
+
+  &__square{
+    @include figure-style;
+    @include abs-position(150px, 150px, 577px, 57.58px);
+  }
+
+  &__round {
+    @include figure-style;
+    border-radius: 50%;
+
+    &--small {
+      @include abs-position(124px, 124px, 624.11px, 415.58px);
+    }
+
+    &--big {
+      @include abs-position(194px, 194px, 56.57px, 452.72px);  
+    }
+  }
+
+}

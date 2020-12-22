@@ -364,7 +364,9 @@ li {
 .page {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: " . . . " " . w . " " . . . ";
+      grid-template-areas: " . . . "
+ " . w . "
+ " . . . ";
   -ms-grid-rows: 1fr 600px 1fr;
       grid-template-rows: 1fr 600px 1fr;
   -ms-grid-columns: 1fr 800px 1fr;
@@ -377,14 +379,18 @@ li {
 
 .wrap {
   position: relative;
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+  /* -ms-grid-row: 2;
+  -ms-grid-column: 2; */
   grid-area: w;
+  -ms-grid-column-align: center;
   overflow: hidden;
   background: #F0F0F3;
+  background-image: url(../img/dots-rectangle.svg), url(../img/dots-rectangle.svg);
+  background-repeat: no-repeat;
+  background-position: 271px 63px, 473px 346px;
 }
 
-.rectanglle {
+.wrap__rectanglle {
   background: #F0F0F3;
   -webkit-box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
           box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
@@ -396,7 +402,7 @@ li {
   top: 129.7px;
 }
 
-.square {
+.wrap__square {
   background: #F0F0F3;
   -webkit-box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
           box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
@@ -408,29 +414,27 @@ li {
   top: 57.58px;
 }
 
-.round-small {
+.wrap__round {
   background: #F0F0F3;
   -webkit-box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
           box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
   border-radius: 12px;
+  border-radius: 50%;
+}
+
+.wrap__round--small {
   position: absolute;
   width: 124px;
   height: 124px;
   left: 624.11px;
   top: 415.58px;
-  border-radius: 50%;
 }
 
-.round-big {
-  background: #F0F0F3;
-  -webkit-box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
-          box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
-  border-radius: 12px;
+.wrap__round--big {
   position: absolute;
   width: 194px;
   height: 194px;
   left: 56.57px;
   top: 452.72px;
-  border-radius: 50%;
 }
 /*# sourceMappingURL=main.css.map */

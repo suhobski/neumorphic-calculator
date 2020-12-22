@@ -13,36 +13,3 @@
   overflow: hidden;
   background: #FFFFFF;
 }
-
-.wrap {
-  position: relative;
-
-  grid-area: w;
-
-  overflow: hidden;
-  background: #F0F0F3;
-}
-
-.rectanglle {
-  @include figure-style;
-  @include abs-position(109.82px, 125.65px, 56.57px, 129.7px);
-}
-
-.square{
-  @include figure-style;
-  @include abs-position(150px, 150px, 577px, 57.58px);
-}
-
-.round-small {
-  @include figure-style;
-  @include abs-position(124px, 124px, 624.11px, 415.58px);
-
-  border-radius: 50%;
-}
-
-.round-big{
-  @include figure-style;
-  @include abs-position(194px, 194px, 56.57px, 452.72px);  
-
-  border-radius: 50%;
-}

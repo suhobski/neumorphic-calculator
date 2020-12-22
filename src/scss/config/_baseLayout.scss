@@ -1,9 +1,6 @@
 .page {
   display: grid;
-  grid-template-areas: 
-  " . . . "
-  " . w . "
-  " . . . ";
+
   grid-template-rows: 1fr 600px 1fr;
   grid-template-columns: 1fr 800px 1fr;
 
@@ -11,5 +8,6 @@
   margin: 0;
 
   overflow: hidden;
-  background: #FFFFFF;
+  background: #F0F0F3;
 }
+

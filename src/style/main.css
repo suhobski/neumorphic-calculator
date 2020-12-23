@@ -459,8 +459,38 @@ li {
 }
 
 .display {
-  height: 142px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  gap: 12px;
+  height: 200px;
+  padding: 14px;
+  text-align: right;
   background: #2E2C2C;
+}
+
+.display__previous-operation {
+  font-size: 20px;
+  color: #504F50;
+}
+
+.display__previous-result {
+  font-size: 32px;
+  color: #707070;
+}
+
+.display__current-operation {
+  font-size: 20px;
+  color: #728AB7;
+}
+
+.display__current-result {
+  font-size: 32px;
+  text-align: right;
+  color: #F2F2F4;
 }
 
 .keyboard {

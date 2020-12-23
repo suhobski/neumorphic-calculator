@@ -494,9 +494,34 @@ li {
   background: #F0F0F3;
   -webkit-box-shadow: -5px -5px 12px rgba(255, 255, 255, 0.6), 5px 5px 12px rgba(174, 174, 192, 0.2);
           box-shadow: -5px -5px 12px rgba(255, 255, 255, 0.6), 5px 5px 12px rgba(174, 174, 192, 0.2);
+  font-size: 16px;
   color: #728AB7;
   outline: none;
   border: none;
+}
+
+.keyboard__btn--clear, .keyboard__btn--percent {
+  color: #898989;
+}
+
+.keyboard__btn--percent {
+  font-size: 12px;
+}
+
+.keyboard__btn--plus-minus {
+  background: url(../img/plus-minus.svg) center no-repeat;
+  background-size: 40%;
+}
+
+.keyboard__btn--divide, .keyboard__btn--multiply, .keyboard__btn--minus, .keyboard__btn--plus {
+  font-size: 24px;
+  color: #745FF2;
+}
+
+.keyboard__btn--equal {
+  font-size: 24px;
+  color: #F0F0F3;
+  background: #2DD3C5;
 }
 
 .keyboard__btn--zero {

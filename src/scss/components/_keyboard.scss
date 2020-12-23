@@ -6,6 +6,7 @@
 
   padding: 0 12px 14px;
 
+
   &__rectangle {
     height: 10px;
     grid-column-start: 1;
@@ -23,10 +24,42 @@
     background: #F0F0F3;
     box-shadow: -5px -5px 12px rgba(255, 255, 255, 0.6), 5px 5px 12px rgba(174, 174, 192, 0.2);
 
+    font-size: 16px;
     color: #728AB7;
     
     outline: none;
     border: none;
+
+    // Верхний ряд клавиш====================================================================================
+    &--clear,
+    &--percent {
+      color: #898989;
+    }
+
+    &--percent {
+      font-size: 12px;
+    }
+
+    &--plus-minus {
+      background: url(../img/plus-minus.svg) center no-repeat;
+      background-size: 40%;
+    }
+
+    // Клавиши операций над числами =========================================================================
+    &--divide,
+    &--multiply,
+    &--minus,
+    &--plus {
+      font-size: 24px;
+      color: #745FF2;
+    }
+    
+    &--equal {
+      font-size: 24px;
+      color: #F0F0F3;
+
+      background: #2DD3C5;
+    }
 
     &--zero {
       grid-column: 1/3;

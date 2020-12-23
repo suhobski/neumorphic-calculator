@@ -370,6 +370,8 @@ li {
       grid-template-columns: 1fr 800px 1fr;
   height: 100vh;
   margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
   overflow: hidden;
   background: #F0F0F3;
 }

@@ -1,4 +1,9 @@
 .page {
+  @include sm {
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: auto;
+  }
+
   display: grid;
 
   grid-template-rows: 1fr 600px 1fr;

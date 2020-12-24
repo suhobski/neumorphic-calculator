@@ -4,6 +4,9 @@ let previousResult = document.querySelector('.display__previous-result')
 let currentOperation = document.querySelector('.display__current-operation')
 let currentResult = document.querySelector('.display__current-result')
 
+let cor = []
+
+
 // Переменные кнопок операций
 const clear = document.querySelector('.keyboard__btn--clear')
 const plusMinus = document.querySelector('.keyboard__btn--plus-minus')
@@ -11,95 +14,130 @@ const percent = document.querySelector('.keyboard__btn--percent')
 const dot = document.querySelector('.keyboard__btn--dot')
 const equal = document.querySelector('.keyboard__btn--equal')
 
-
-const divide = document.querySelector('.keyboard__btn--divide')
-const multiply = document.querySelector('.keyboard__btn--multiply')
-const minus = document.querySelector('.keyboard__btn--minus')
-const plus = document.querySelector('.keyboard__btn--plus')
-
 // Переменные числовых кнопок
-const zero = document.querySelector('.keyboard__btn--zero')
-const one = document.querySelector('.keyboard__btn--one')
-const two = document.querySelector('.keyboard__btn--two')
-const three = document.querySelector('.keyboard__btn--three')
-const four = document.querySelector('.keyboard__btn--four')
-const five = document.querySelector('.keyboard__btn--five')
-const six = document.querySelector('.keyboard__btn--six')
-const seven = document.querySelector('.keyboard__btn--seven')
-const eight = document.querySelector('.keyboard__btn--eight')
-const nine = document.querySelector('.keyboard__btn--nine')
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
 
-window.addEventListener('keydown', event => {
-  switch (event.code) {
-    case('Digit1') :
-    case ('Numpad1'): {
-      currentOperation.innerHTML += 1
-      one.style.background = '#d8d8da'
-      setTimeout(() => one.style.background = '#F0F0F3', 150)
-      break;
+function Calculator() {
+
+
+}
+
+numberButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    // добавляем цифру к строке текущей операции
+    currentOperation.innerText += button.innerText
+    
+    // добавляем цифру к массиву вычисления
+  if (isFinite(cor[cor.length-1])  || (cor[cor.length-1]) == '.') {
+      cor[cor.length-1] += button.innerText
+    } else {
+      cor.push(button.innerText)
     }
-    case('Digit2') :
-    case ('Numpad2'): {
-      currentOperation.innerHTML += 2
-      two.style.background = '#d8d8da'
-      setTimeout(() => two.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit3') :
-    case ('Numpad3'): {
-      currentOperation.innerHTML += 3
-      three.style.background = '#d8d8da'
-      setTimeout(() => three.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit4') :
-    case ('Numpad4'): {
-      currentOperation.innerHTML += 4
-      four.style.background = '#d8d8da'
-      setTimeout(() => four.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit5') :
-    case ('Numpad5'): {
-      currentOperation.innerHTML += 5
-      five.style.background = '#d8d8da'
-      setTimeout(() => five.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit6') :
-    case ('Numpad6'): {
-      currentOperation.innerHTML += 6
-      six.style.background = '#d8d8da'
-      setTimeout(() => six.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit7') :
-    case ('Numpad7'): {
-      currentOperation.innerHTML += 7
-      seven.style.background = '#d8d8da'
-      setTimeout(() => seven.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit8') :
-    case ('Numpad8'): {
-      currentOperation.innerHTML += 8
-      eight.style.background = '#d8d8da'
-      setTimeout(() => eight.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit9') :
-    case ('Numpad9'): {
-      currentOperation.innerHTML += 9
-      nine.style.background = '#d8d8da'
-      setTimeout(() => nine.style.background = '#F0F0F3', 150)
-      break;
-    }
-    case('Digit0') :
-    case ('Numpad0'): {
-      currentOperation.innerHTML += 0
-      zero.style.background = '#d8d8da'
-      setTimeout(() => zero.style.background = '#F0F0F3', 150)
-      break;
-    }
-  } 
+    console.log(cor);
+    // стили нажатия кнопки
+    button.style.background = '#d8d8da'
+    setTimeout(() => button.style.background = '#F0F0F3', 150)
+  })
 })
+
+operationButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (isFinite(cor[cor.length-1])) {
+      // добавляем символ к строке текущей операции
+      currentOperation.innerText += button.innerText
+
+      // добавляем символ к массиву вычисления
+      cor.push(button.innerText)
+      console.log(cor);
+      
+      // стили нажатия кнопки
+      button.style.background = '#d8d8da'
+      setTimeout(() => button.style.background = '#F0F0F3', 150) 
+    }
+  });
+});
+
+dot.addEventListener('click', () => {
+  if (!cor[cor.length-1].includes('.') && isFinite(cor[cor.length-1])) {
+    // добавляем символ к строке текущей операции
+    currentOperation.innerText += '.'
+
+    cor[cor.length-1] += '.'
+    console.log(cor)
+  }
+  if (!isFinite(cor[cor.length-1])) {
+    currentOperation.innerText += '.'
+    cor.push('.')
+    console.log(cor);
+  }
+
+})
+
+// Очистить ( С ) ===========================================================================================
+clear.addEventListener('click', () => {
+  cor = []
+  currentOperation.innerText = ''
+  console.log(cor);
+})
+
+// Равно ( = )  =============================================================================================
+equal.addEventListener('click', () => {
+  compute(cor)
+})
+
+// Процент ( % ) ============================================================================================
+
+// percent.addEventListener('click', () => {
+//   console.log("Click");
+//   let lastIndex = cor.length-1
+//   if (isFinite(cor[lastIndex]) && cor.length >= 3 && (cor[lastIndex-1] === '+' || cor[lastIndex-1] === '-')){
+//     cor[lastIndex] = cor[lastIndex-2] / 100 * cor[lastIndex] 
+//   }
+//   if (isFinite(cor[lastIndex]) && cor.length === 1 || (cor[lastIndex-1] === '*' || cor[lastIndex-1] === '*')){
+//     console.log(cor[lastIndex]);
+//     cor[lastIndex] = cor[lastIndex] / 100 * cor[lastIndex] 
+//   }
+// })
+
+function compute(array) {
+
+  while(true) {
+    if (array.length === 1) return currentResult.innerText = array[0]
+    
+    if (array.includes("*")) {
+      let index = array.indexOf("*")
+      let result = array[index-1] * array[index+1]
+      array.splice(index-1, 3, String(result))
+      console.log(array)
+      continue  
+    }    
+    
+    if (array.includes("÷")) {
+      let index = array.indexOf("÷")
+      let result = array[index-1] / array[index+1]
+      array.splice(index-1, 3, String(result))
+      console.log(array)
+      continue  
+    }
+
+    if (array.includes("+")) {
+      let index = array.indexOf("+")
+      let result = +array[index-1] + +array[index+1]
+      array.splice(index-1, 3, String(result))
+      console.log(array)
+      continue  
+    }
+
+    if (array.includes("-")) {
+      let index = array.indexOf("-")
+      let result = array[index-1] - array[index+1]
+      array.splice(index-1, 3, String(result))
+      console.log(array)
+      continue  
+    }
+    
+  }
+  
+}
+

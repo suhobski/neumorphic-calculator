@@ -18,21 +18,19 @@ const equal = document.querySelector('.keyboard__btn--equal')
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 
-function Calculator() {
-
-
-}
 
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
+   
+    // добавляем цифру к массиву вычисления
+  if ((isFinite(cor[cor.length-1])  || (cor[cor.length-1]) == '.') && (cor[cor.length-1]) !== "0") {
+    cor[cor.length-1] += button.innerText
     // добавляем цифру к строке текущей операции
     currentOperation.innerText += button.innerText
-    
-    // добавляем цифру к массиву вычисления
-  if (isFinite(cor[cor.length-1])  || (cor[cor.length-1]) == '.') {
-      cor[cor.length-1] += button.innerText
-    } else {
+    } else if ((cor[cor.length-1]) !== "0"){
       cor.push(button.innerText)
+      // добавляем цифру к строке текущей операции
+      currentOperation.innerText += button.innerText
     }
     console.log(cor);
     // стили нажатия кнопки
@@ -78,6 +76,7 @@ dot.addEventListener('click', () => {
 clear.addEventListener('click', () => {
   cor = []
   currentOperation.innerText = ''
+  currentResult.innerText = ''
   console.log(cor);
 })
 

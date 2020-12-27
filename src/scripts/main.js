@@ -59,6 +59,7 @@ operationButtons.forEach(button => {
 
 dot.addEventListener('click', () => {
   if (!isFinite(cor[cor.length-1])) {
+    displayOperation()
     currentOperation.innerText += '.'
     cor.push('.')
     console.log(cor);

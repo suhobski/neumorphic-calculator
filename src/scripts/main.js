@@ -82,30 +82,39 @@ clear.addEventListener('click', () => {
 
 // Равно ( = )  =============================================================================================
 equal.addEventListener('click', () => {
-  currentResult.innerText = compute(cor)
-  cor = []
+  if (isFinite(cor[cor.length-1])) {
+    currentResult.innerText = compute(cor)
+    cor = []
+  }
 })
 
 // Процент ( % ) ============================================================================================
 
-// percent.addEventListener('click', () => {
-//   console.log("Click");
-//   let lastIndex = cor.length-1
-//   if (isFinite(cor[lastIndex]) && cor.length >= 3 && (cor[lastIndex-1] === '+' || cor[lastIndex-1] === '-')){
-//     cor[lastIndex] = cor[lastIndex-2] / 100 * cor[lastIndex] 
-//   }
-//   if (isFinite(cor[lastIndex]) && cor.length === 1 || (cor[lastIndex-1] === '*' || cor[lastIndex-1] === '*')){
-//     console.log(cor[lastIndex]);
-//     cor[lastIndex] = cor[lastIndex] / 100 * cor[lastIndex] 
-//   }
-// })
+percent.addEventListener('click', () => {
+  if (isFinite(cor[cor.length-1])) {
+    if(cor.length > 2) {
+      (cor[cor.length-1] = cor[cor.length-3] / 100 * cor[cor.length-1])
+      displayOperation()
+    }
+  if (cor.length === 1 && isFinite(cor[0])) {
+    cor[0] /= 100
+    displayOperation()
+  }
+    // currentOperation.innerText += "%"
+    // cor.push('%')
+    console.log(cor);
+  }
+  // стили нажатия кнопки
+  percent.style.background = '#d8d8da'
+  setTimeout(() => percent.style.background = '#F0F0F3', 150) 
+})
 
 function compute(array) {
 
   while(true) {
     // если длина массива равна 1, мы получили результат
     if (array.length === 1) return array[0]
-    
+  
     if (array.includes("*")) {
       let index = array.indexOf("*")
       let result = array[index-1] * array[index+1]
@@ -158,4 +167,3 @@ function displayOperation() {
   currentOperation.innerText = ''
   cor.forEach(item => currentOperation.innerText += item) 
 }
-

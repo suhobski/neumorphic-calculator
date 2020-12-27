@@ -28,6 +28,7 @@ numberButtons.forEach(button => {
     // добавляем цифру к строке текущей операции
     currentOperation.innerText += button.innerText
     } else if ((cor[cor.length-1]) !== "0"){
+      displayOperation()
       cor.push(button.innerText)
       // добавляем цифру к строке текущей операции
       currentOperation.innerText += button.innerText
@@ -57,19 +58,17 @@ operationButtons.forEach(button => {
 });
 
 dot.addEventListener('click', () => {
-  if (!cor[cor.length-1].includes('.') && isFinite(cor[cor.length-1])) {
+  if (!isFinite(cor[cor.length-1])) {
+    currentOperation.innerText += '.'
+    cor.push('.')
+    console.log(cor);
+  } else if (!cor[cor.length-1].includes('.') && isFinite(cor[cor.length-1])) {
     // добавляем символ к строке текущей операции
     currentOperation.innerText += '.'
 
     cor[cor.length-1] += '.'
     console.log(cor)
   }
-  if (!isFinite(cor[cor.length-1])) {
-    currentOperation.innerText += '.'
-    cor.push('.')
-    console.log(cor);
-  }
-
 })
 
 // Очистить ( С ) ===========================================================================================
@@ -82,7 +81,8 @@ clear.addEventListener('click', () => {
 
 // Равно ( = )  =============================================================================================
 equal.addEventListener('click', () => {
-  compute(cor)
+  currentResult.innerText = compute(cor)
+  cor = []
 })
 
 // Процент ( % ) ============================================================================================
@@ -102,7 +102,8 @@ equal.addEventListener('click', () => {
 function compute(array) {
 
   while(true) {
-    if (array.length === 1) return currentResult.innerText = array[0]
+    // если длина массива равна 1, мы получили результат
+    if (array.length === 1) return array[0]
     
     if (array.includes("*")) {
       let index = array.indexOf("*")
@@ -130,13 +131,30 @@ function compute(array) {
 
     if (array.includes("-")) {
       let index = array.indexOf("-")
-      let result = array[index-1] - array[index+1]
+      let result = parseFloat(array[index-1]) - parseFloat(array[index+1])
+      console.log(result);
       array.splice(index-1, 3, String(result))
       console.log(array)
       continue  
     }
-    
   }
-  
+}
+
+// previousOperation
+// previousResult
+// currentOperation 
+// currentResult
+
+function displayOperation() {
+  if (currentResult.innerText) {
+    previousOperation.innerText = currentOperation.innerText
+    previousResult.innerText = currentResult.innerText
+    currentOperation.innerText = ''
+    currentResult.innerText = ''
+    cor = []
+  }
+
+  currentOperation.innerText = ''
+  cor.forEach(item => currentOperation.innerText += item) 
 }
 

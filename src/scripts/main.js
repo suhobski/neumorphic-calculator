@@ -67,6 +67,10 @@ dot.addEventListener('click', () => {
     currentOperation.innerText += '.'
     cor.push('.')
     console.log(cor);
+
+    // !Меняем значение кнопки Clear
+    if (clear.innerText === 'AC') clear.innerText = 'C'
+
   } else if (!cor[cor.length-1].includes('.') && isFinite(cor[cor.length-1])) {
     // добавляем символ к строке текущей операции
     currentOperation.innerText += '.'
@@ -81,7 +85,17 @@ clear.addEventListener('click', () => {
   cor = []
   currentOperation.innerText = ''
   currentResult.innerText = ''
-  console.log(cor);
+  console.log(cor)
+
+  if (clear.innerText === 'AC' && previousResult.innerText) {
+    previousResult.innerText = ''
+    previousOperation.innerText = ''
+    clear.innerText = 'C'
+  }
+
+  if (previousResult.innerText) {
+    clear.innerText = 'AC'
+  }
 })
 
 // Равно ( = )  =============================================================================================

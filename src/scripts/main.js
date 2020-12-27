@@ -18,11 +18,10 @@ const equal = document.querySelector('.keyboard__btn--equal')
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 
-
+// Кнопки чисел ============================================================================================
 numberButtons.forEach(button => {
   button.addEventListener('click', () => {
    
-    // добавляем цифру к массиву вычисления
   if ((isFinite(cor[cor.length-1])  || (cor[cor.length-1]) == '.') && (cor[cor.length-1]) !== "0") {
     cor[cor.length-1] += button.innerText
     // добавляем цифру к строке текущей операции
@@ -37,9 +36,13 @@ numberButtons.forEach(button => {
     // стили нажатия кнопки
     button.style.background = '#d8d8da'
     setTimeout(() => button.style.background = '#F0F0F3', 150)
+
+    // !Меняем значение кнопки Clear
+    if (clear.innerText === 'AC') clear.innerText = 'C'
   })
 })
 
+// Операции ( + ), ( - ), ( * ), ( / ) =====================================================================
 operationButtons.forEach(button => {
   button.addEventListener('click', () => {
     if (isFinite(cor[cor.length-1])) {
@@ -57,6 +60,7 @@ operationButtons.forEach(button => {
   });
 });
 
+// Точка ( . ) ==============================================================================================
 dot.addEventListener('click', () => {
   if (!isFinite(cor[cor.length-1])) {
     displayOperation()
@@ -109,6 +113,27 @@ percent.addEventListener('click', () => {
   setTimeout(() => percent.style.background = '#F0F0F3', 150) 
 })
 
+// ( +/- ) ==================================================================================================
+plusMinus.addEventListener('click', () => {
+  if (isFinite(cor[cor.length-1])) {
+    if (!cor[cor.length-1].startsWith('-')) {
+      cor[cor.length-1] = '-' + cor[cor.length-1]
+    } else {
+      cor[cor.length-1] = cor[cor.length-1].substr(1)
+    }
+
+    displayOperation()
+    console.log(cor);
+  }
+
+  // if (!cor[cor.length-1] === null || cor[cor.length-1] === undefined) {
+  //   cor.push('-')
+  //   displayOperation()
+  //   console.log(cor);
+  // }
+})
+
+// Функция подсчета результата =============================================================================
 function compute(array) {
 
   while(true) {
@@ -142,7 +167,6 @@ function compute(array) {
     if (array.includes("-")) {
       let index = array.indexOf("-")
       let result = parseFloat(array[index-1]) - parseFloat(array[index+1])
-      console.log(result);
       array.splice(index-1, 3, String(result))
       console.log(array)
       continue  

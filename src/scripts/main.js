@@ -64,9 +64,10 @@ operationButtons.forEach(button => {
 dot.addEventListener('click', () => {
   if (!isFinite(cor[cor.length-1])) {
     displayOperation()
-    currentOperation.innerText += '.'
-    cor.push('.')
+    // currentOperation.innerText += '.'
+    cor.push('0.')
     console.log(cor);
+    displayOperation()
 
     // !Меняем значение кнопки Clear
     if (clear.innerText === 'AC') clear.innerText = 'C'
@@ -83,7 +84,7 @@ dot.addEventListener('click', () => {
 // Очистить ( С ) ===========================================================================================
 clear.addEventListener('click', () => {
   cor = []
-  currentOperation.innerText = ''
+  currentOperation.innerText = '0'
   currentResult.innerText = ''
   console.log(cor)
 
@@ -193,7 +194,7 @@ function displayOperation() {
   if (currentResult.innerText) {
     previousOperation.innerText = currentOperation.innerText
     previousResult.innerText = currentResult.innerText
-    currentOperation.innerText = ''
+    currentOperation.innerText = '0'
     currentResult.innerText = ''
     cor = []
   }

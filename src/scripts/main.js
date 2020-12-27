@@ -139,12 +139,6 @@ plusMinus.addEventListener('click', () => {
     displayOperation()
     console.log(cor);
   }
-
-  // if (!cor[cor.length-1] === null || cor[cor.length-1] === undefined) {
-  //   cor.push('-')
-  //   displayOperation()
-  //   console.log(cor);
-  // }
 })
 
 // Функция подсчета результата =============================================================================
@@ -153,6 +147,8 @@ function compute(array) {
   while(true) {
     // если длина массива равна 1, мы получили результат
     if (array.length === 1) return array[0]
+
+    if (array.length === 2) return array[0] + array[1]
   
     if (array.includes("*")) {
       let index = array.indexOf("*")

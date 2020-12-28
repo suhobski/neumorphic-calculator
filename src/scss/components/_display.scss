@@ -7,31 +7,32 @@
   justify-content: end;
   gap: 8px;
 
-  height: 145px;
+  // height: 145px;
   padding: 12px;
 
   text-align: right;
   overflow-wrap: break-word;
+  overflow: hidden;
 
   background: #2E2C2C;
 
   &__previous-operation {
-    font-size: 20px;
+    font-size: 2em;
     color: #504F50;
   }
 
   &__previous-result {
-    font-size: 32px;
+    font-size: 2em;
     color: #707070;
   }
 
   &__current-operation {
-    font-size: 20px;
+    font-size: 2em;
     color: #728AB7;
   }
 
   &__current-result {
-    font-size: 32px;
+    font-size: 3em;
     text-align: right;
     color: #F2F2F4;
   }

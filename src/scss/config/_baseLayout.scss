@@ -1,6 +1,6 @@
 .page {
   display: grid;
-  grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
+  grid-template-columns: 1fr minmax(200px, 1200px) 1fr;
   grid-template-rows: 1fr minmax(400px, 100%) 1fr;
   align-content: center;
   justify-content: center;

@@ -1,8 +1,8 @@
 .keyboard {
   display: grid;
-  grid-template-rows: 1fr repeat(5, 35px);
-  grid-template-columns: repeat(4, 35px);
-  gap: 12px;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: repeat(4, auto);
+  gap: 1em;
 
   padding: 0 12px 14px;
 

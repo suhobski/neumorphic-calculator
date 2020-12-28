@@ -1,12 +1,13 @@
 .calculator {
   @include figure-style;
 
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  
   grid-column-start: 2;
   grid-row-start: 2;
-  
-  width: 200px;
-  height: 400px;
 
+  max-height: 100vh;
   overflow: hidden;
   z-index: 30;
 }

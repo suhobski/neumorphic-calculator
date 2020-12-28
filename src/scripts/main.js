@@ -57,7 +57,20 @@ operationButtons.forEach(button => {
       button.style.background = '#d8d8da'
       setTimeout(() => button.style.background = '#F0F0F3', 150) 
     }
-  });
+    
+    // использование текущего результата для новых вычислений после нажатия кнопок операций над числами
+    if (currentResult.innerText) {
+      cor.push(currentResult.innerText)
+      cor.push(button.innerText)
+
+      previousOperation.innerText = currentOperation.innerText
+      previousResult.innerText = currentResult.innerText
+      currentOperation.innerText = currentResult.innerText + button.innerText 
+      currentResult.innerText = ''
+
+      console.log(cor);
+    }
+  })
 });
 
 // Точка ( . ) ==============================================================================================
@@ -184,11 +197,6 @@ function compute(array) {
     }
   }
 }
-
-// previousOperation
-// previousResult
-// currentOperation 
-// currentResult
 
 function displayOperation() {
   if (currentResult.innerText) {

@@ -1,5 +1,12 @@
 @media (min-height: 1000px) {
   .keyboard__btn {
     font-size: 36px;
+
+    &--divide,
+    &--multiply,
+    &--minus,
+    &--plus {
+    font-size: 60px;
+    }
   }
 }

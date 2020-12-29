@@ -65,7 +65,7 @@
     &--multiply,
     &--minus,
     &--plus {
-      font-size: 24px;
+    font-size: calc( (100vh - 400px)/(1000 - 400) * (60 - 24) + 24px);
       color: #745FF2;
     }
     

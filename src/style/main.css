@@ -494,7 +494,7 @@ li {
 }
 
 .display__previous-result {
-  font-size: 2em;
+  font-size: 3em;
   color: #707070;
 }
 
@@ -578,7 +578,7 @@ li {
 }
 
 .keyboard__btn--divide, .keyboard__btn--multiply, .keyboard__btn--minus, .keyboard__btn--plus {
-  font-size: 24px;
+  font-size: calc( (100vh - 400px)/(1000 - 400) * (60 - 24) + 24px);
   color: #745FF2;
 }
 
@@ -599,6 +599,9 @@ li {
 @media (min-height: 1000px) {
   .keyboard__btn {
     font-size: 36px;
+  }
+  .keyboard__btn--divide, .keyboard__btn--multiply, .keyboard__btn--minus, .keyboard__btn--plus {
+    font-size: 60px;
   }
 }
 /*# sourceMappingURL=main.css.map */

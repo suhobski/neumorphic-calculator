@@ -32,7 +32,6 @@ numberButtons.forEach(button => {
       // добавляем цифру к строке текущей операции
       currentOperation.innerText += button.innerText
     }
-    console.log(cor);
     // стили нажатия кнопки
     button.style.background = '#d8d8da'
     setTimeout(() => button.style.background = '#F0F0F3', 150)
@@ -51,7 +50,6 @@ operationButtons.forEach(button => {
 
       // добавляем символ к массиву вычисления
       cor.push(button.innerText)
-      console.log(cor);
       
       // стили нажатия кнопки
       button.style.background = '#d8d8da'
@@ -67,8 +65,6 @@ operationButtons.forEach(button => {
       previousResult.innerText = currentResult.innerText
       currentOperation.innerText = currentResult.innerText.substr(2) + button.innerText 
       currentResult.innerText = ''
-
-      console.log(cor);
     }
   })
 });
@@ -79,7 +75,6 @@ dot.addEventListener('click', () => {
     displayOperation()
     // currentOperation.innerText += '.'
     cor.push('0.')
-    console.log(cor);
     displayOperation()
 
     // !Меняем значение кнопки Clear
@@ -90,7 +85,6 @@ dot.addEventListener('click', () => {
     currentOperation.innerText += '.'
 
     cor[cor.length-1] += '.'
-    console.log(cor)
   }
 })
 
@@ -99,7 +93,6 @@ clear.addEventListener('click', () => {
   cor = []
   currentOperation.innerText = '0'
   currentResult.innerText = ''
-  console.log(cor)
 
   if (clear.innerText === 'AC' && previousResult.innerText) {
     previousResult.innerText = ''
@@ -128,13 +121,10 @@ percent.addEventListener('click', () => {
       (cor[cor.length-1] = cor[cor.length-3] / 100 * cor[cor.length-1])
       displayOperation()
     }
-  if (cor.length === 1 && isFinite(cor[0])) {
-    cor[0] /= 100
-    displayOperation()
-  }
-    // currentOperation.innerText += "%"
-    // cor.push('%')
-    console.log(cor);
+    if (cor.length === 1 && isFinite(cor[0])) {
+      cor[0] /= 100
+      displayOperation()
+    }
   }
   // стили нажатия кнопки
   percent.style.background = '#d8d8da'
@@ -151,7 +141,6 @@ plusMinus.addEventListener('click', () => {
     }
 
     displayOperation()
-    console.log(cor);
   }
 })
 
@@ -168,7 +157,6 @@ function compute(array) {
       let index = array.indexOf("×")
       let result = array[index-1] * array[index+1]
       array.splice(index-1, 3, String(result))
-      console.log(array)
       continue  
     }    
     
@@ -176,7 +164,6 @@ function compute(array) {
       let index = array.indexOf("÷")
       let result = array[index-1] / array[index+1]
       array.splice(index-1, 3, String(result))
-      console.log(array)
       continue  
     }
 
@@ -184,7 +171,6 @@ function compute(array) {
       let index = array.indexOf("+")
       let result = +array[index-1] + +array[index+1]
       array.splice(index-1, 3, String(result))
-      console.log(array)
       continue  
     }
 
@@ -192,7 +178,6 @@ function compute(array) {
       let index = array.indexOf("-")
       let result = parseFloat(array[index-1]) - parseFloat(array[index+1])
       array.splice(index-1, 3, String(result))
-      console.log(array)
       continue  
     }
   }

@@ -60,12 +60,12 @@ operationButtons.forEach(button => {
     
     // использование текущего результата для новых вычислений после нажатия кнопок операций над числами
     if (currentResult.innerText) {
-      cor.push(currentResult.innerText)
+      cor.push(currentResult.innerText.substr(2))
       cor.push(button.innerText)
 
       previousOperation.innerText = currentOperation.innerText
       previousResult.innerText = currentResult.innerText
-      currentOperation.innerText = currentResult.innerText + button.innerText 
+      currentOperation.innerText = currentResult.innerText.substr(2) + button.innerText 
       currentResult.innerText = ''
 
       console.log(cor);
@@ -115,7 +115,7 @@ clear.addEventListener('click', () => {
 // Равно ( = )  =============================================================================================
 equal.addEventListener('click', () => {
   if (isFinite(cor[cor.length-1])) {
-    currentResult.innerText = compute(cor)
+    currentResult.innerText = '= ' + compute(cor)
     cor = []
   }
 })

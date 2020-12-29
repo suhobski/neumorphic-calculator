@@ -8,12 +8,31 @@
 
 
   &__rectangle {
-    height: 10px;
+    display: grid;
+    justify-content: center;
+    align-content: end;
+
     grid-column-start: 1;
     grid-column-end: 5;
-
     grid-row-start: 1;
     grid-row-end: 2;
+
+    // background: limegreen;
+
+    &--outer {
+      background: #F0F0F3;
+      box-shadow: -1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
+      border-radius: 12px;
+    }
+
+    &--inner {
+      width: 120px;
+      height: 8px;
+
+      background: #EEEEEE;
+      box-shadow: inset -1px -1px 1px rgba(255, 255, 255, 0.7), inset 1px 1px 2px rgba(174, 174, 192, 0.2);
+      border-radius: 12px;
+    }
   }
   
   &__btn {
@@ -60,7 +79,7 @@
 
     &--zero {
       grid-column: 1/3;
-      padding-left: 17%;
+      padding-left: 18%;
       text-align: left;
     }
   }

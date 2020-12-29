@@ -19,7 +19,7 @@
   
   &__rectanglle {
     @include figure-style;
-    @include abs-position(250px, 200px, 10px, 129.7px);
+    @include abs-position(250px, 200px, 35px, 129.7px);
   }
 
   &__square{

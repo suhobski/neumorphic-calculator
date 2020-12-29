@@ -2,11 +2,10 @@
   position: relative;
 
   display: grid;
-  grid-column-start: 2;
-  grid-row-start: 2;
-
-  grid-template-rows: 1fr minmax(400px, 768px) 1fr;
-  grid-template-columns: 1fr minmax(200px, 415px) 1fr;
+  grid-template-rows: 5% minmax(400px, 768px) 5%;
+  grid-template-columns: 7.5% minmax(200px, 415px) 7.5%;
+  align-content: center;
+  justify-content: center;
 
   max-height: 100vh;
 
@@ -39,5 +38,4 @@
       @include abs-position(194px, 194px, 56.57px, 452.72px);  
     }
   }
-
 }

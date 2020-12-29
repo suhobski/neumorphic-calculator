@@ -364,10 +364,10 @@ li {
 .page {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr minmax(200px, 1200px) 1fr;
-      grid-template-columns: 1fr minmax(200px, 1200px) 1fr;
-  -ms-grid-rows: 1fr minmax(400px, 100%) 1fr;
-      grid-template-rows: 1fr minmax(400px, 100%) 1fr;
+  -ms-grid-columns: minmax(200px, 1200px);
+      grid-template-columns: minmax(200px, 1200px);
+  -ms-grid-rows: minmax(400px, 100%);
+      grid-template-rows: minmax(400px, 100%);
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
@@ -385,14 +385,15 @@ li {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
-  -ms-grid-rows: 1fr minmax(400px, 768px) 1fr;
-      grid-template-rows: 1fr minmax(400px, 768px) 1fr;
-  -ms-grid-columns: 1fr minmax(200px, 415px) 1fr;
-      grid-template-columns: 1fr minmax(200px, 415px) 1fr;
+  -ms-grid-rows: 5% minmax(400px, 768px) 5%;
+      grid-template-rows: 5% minmax(400px, 768px) 5%;
+  -ms-grid-columns: 7.5% minmax(200px, 415px) 7.5%;
+      grid-template-columns: 7.5% minmax(200px, 415px) 7.5%;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   max-height: 100vh;
   background: #F0F0F3;
   background-image: url(../img/dots-rectangle.svg), url(../img/dots-rectangle.svg);
@@ -462,7 +463,6 @@ li {
       grid-column-start: 2;
   -ms-grid-row: 2;
       grid-row-start: 2;
-  max-height: 100vh;
   overflow: hidden;
   z-index: 30;
 }
@@ -515,7 +515,7 @@ li {
       grid-template-rows: repeat(5, auto);
   -ms-grid-columns: (auto)[4];
       grid-template-columns: repeat(4, auto);
-  gap: 1em;
+  gap: 4%;
   padding: 0 12px 14px;
 }
 

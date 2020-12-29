@@ -1,7 +1,7 @@
 .keyboard {
   display: grid;
-  grid-template-rows: repeat(5, auto);
-  grid-template-columns: repeat(4, auto);
+  grid-template-rows: 30px repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 4%;
 
   padding: 0 12px 14px;
@@ -17,10 +17,9 @@
     grid-row-start: 1;
     grid-row-end: 2;
 
-    // background: limegreen;
-
     &--outer {
       background: #F0F0F3;
+      border: 1px solid #F0F0F3;
       box-shadow: -1px -1px 3px #FFFFFF, 1.5px 1.5px 3px rgba(174, 174, 192, 0.4);
       border-radius: 12px;
     }
@@ -36,9 +35,9 @@
   }
   
   &__btn {
-    border-radius: 6px;
     background: #F0F0F3;
-    box-shadow: -5px -5px 12px rgba(255, 255, 255, 0.6), 5px 5px 12px rgba(174, 174, 192, 0.2);
+    box-shadow: -10px -10px 24px rgba(255, 255, 255, 0.6), 10px 10px 24px rgba(174, 174, 192, 0.2);
+    border-radius: 16px;
 
     font-size: calc( (100vh - 400px)/(1000 - 400) * (40 - 16) + 16px);
     color: #728AB7;

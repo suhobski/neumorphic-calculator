@@ -568,10 +568,6 @@ li {
   color: #898989;
 }
 
-.keyboard__btn--percent {
-  font-size: 3vh;
-}
-
 .keyboard__btn--plus-minus {
   background: url(../img/plus-minus.svg) center 60% no-repeat;
   background-size: 40%;

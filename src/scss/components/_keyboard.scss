@@ -17,14 +17,11 @@
   }
   
   &__btn {
-    align-self: stretch;
-    justify-self: stretch;
-
     border-radius: 6px;
     background: #F0F0F3;
     box-shadow: -5px -5px 12px rgba(255, 255, 255, 0.6), 5px 5px 12px rgba(174, 174, 192, 0.2);
 
-    font-size: 16px;
+    font-size: calc( (100vh - 400px)/(1000 - 400) * (40 - 16) + 16px);
     color: #728AB7;
     
     outline: none;
@@ -37,11 +34,11 @@
     }
 
     &--percent {
-      font-size: 12px;
+      font-size: 3vh;
     }
 
     &--plus-minus {
-      background: url(../img/plus-minus.svg) center no-repeat;
+      background: url(../img/plus-minus.svg) center 60% no-repeat;
       background-size: 40%;
     }
 
@@ -55,7 +52,7 @@
     }
     
     &--equal {
-      font-size: 24px;
+      font-size: 6vh;
       color: #F0F0F3;
 
       background: #2DD3C5;
@@ -63,7 +60,7 @@
 
     &--zero {
       grid-column: 1/3;
-      padding-left: 13px;
+      padding-left: 17%;
       text-align: left;
     }
   }

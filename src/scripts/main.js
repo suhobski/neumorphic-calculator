@@ -164,8 +164,8 @@ function compute(array) {
 
     if (array.length === 2) return array[0] + array[1]
   
-    if (array.includes("*")) {
-      let index = array.indexOf("*")
+    if (array.includes("×")) {
+      let index = array.indexOf("×")
       let result = array[index-1] * array[index+1]
       array.splice(index-1, 3, String(result))
       console.log(array)

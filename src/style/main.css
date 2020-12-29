@@ -397,8 +397,9 @@ li {
   max-height: 100vh;
   background: #F0F0F3;
   background-image: url(../img/dots-rectangle.svg), url(../img/dots-rectangle.svg);
+  background-size: 10%, 10%;
   background-repeat: no-repeat;
-  background-position: 271px 63px, 473px 346px;
+  background-position: 30% 5%, 80% 80%;
   overflow: hidden;
 }
 
@@ -408,9 +409,9 @@ li {
           box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
   border-radius: 12px;
   position: absolute;
-  width: 109.82px;
-  height: 125.65px;
-  left: 56.57px;
+  width: 250px;
+  height: 200px;
+  left: 10px;
   top: 129.7px;
 }
 
@@ -422,7 +423,7 @@ li {
   position: absolute;
   width: 150px;
   height: 150px;
-  left: 577px;
+  left: 75%;
   top: 57.58px;
 }
 
@@ -436,8 +437,8 @@ li {
 
 .wrap__round--small {
   position: absolute;
-  width: 124px;
-  height: 124px;
+  width: 200px;
+  height: 200px;
   left: 624.11px;
   top: 415.58px;
 }
@@ -447,7 +448,7 @@ li {
   width: 194px;
   height: 194px;
   left: 56.57px;
-  top: 452.72px;
+  top: 90%;
 }
 
 .calculator {

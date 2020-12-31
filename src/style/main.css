@@ -413,6 +413,7 @@ li {
   height: 200px;
   left: 35px;
   top: 129.7px;
+  z-index: 0;
 }
 
 .wrap__square {
@@ -425,6 +426,7 @@ li {
   height: 150px;
   left: 75%;
   top: 57.58px;
+  z-index: 0;
 }
 
 .wrap__round {
@@ -433,6 +435,7 @@ li {
           box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
   border-radius: 12px;
   border-radius: 50%;
+  z-index: 0;
 }
 
 .wrap__round--small {

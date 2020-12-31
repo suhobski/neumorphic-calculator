@@ -20,16 +20,22 @@
   &__rectanglle {
     @include figure-style;
     @include abs-position(250px, 200px, 35px, 129.7px);
+
+    z-index: 0;
   }
 
   &__square{
     @include figure-style;
     @include abs-position(150px, 150px, 75%, 57.58px);
+    
+    z-index: 0;
   }
 
   &__round {
     @include figure-style;
     border-radius: 50%;
+
+    z-index: 0;
 
     &--small {
       @include abs-position(200px, 200px, 624.11px, 415.58px);

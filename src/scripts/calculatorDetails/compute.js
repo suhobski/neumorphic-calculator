@@ -12,28 +12,28 @@ export function compute(array) {
     if (array.includes("×")) {
       let index = array.indexOf("×")
       let result = parseFloat(array[index-1]) * parseFloat(array[index+1])
-      array.splice(index-1, 3, String(Number(result.toFixed(10))))
+      array.splice(index-1, 3, String(Number(result.toFixed(12))))
       continue  
     }    
     
     if (array.includes("÷")) {
       let index = array.indexOf("÷")
       let result = parseFloat(array[index-1]) / parseFloat(array[index+1])
-      array.splice(index-1, 3, String(Number(result.toFixed(10))))
+      array.splice(index-1, 3, String(Number(result.toFixed(12))))
       continue  
     }
 
     if (array.includes("+")) {
       let index = array.indexOf("+")
       let result = parseFloat(array[index-1]) + parseFloat(array[index+1])
-      array.splice(index-1, 3, String(Number(result.toFixed(10))))
+      array.splice(index-1, 3, String(Number(result.toFixed(12))))
       continue  
     }
 
     if (array.includes("-")) {
       let index = array.indexOf("-")
       let result = parseFloat(array[index-1]) - parseFloat(array[index+1])
-      array.splice(index-1, 3, String(Number(result.toFixed(10))))
+      array.splice(index-1, 3, String(Number(result.toFixed(12))))
       continue  
     }
   }

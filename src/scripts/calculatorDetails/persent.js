@@ -16,10 +16,6 @@ export function calculatorPersent(operations) {
       }
     }
 
-    // стили нажатия кнопки
-    percent.style.background = '#d8d8da'
-    setTimeout(() => percent.style.background = '#F0F0F3', 150)
-
     display(operations)
     return operations
   })

@@ -32,10 +32,7 @@ export function calculatorNumbers(operations) {
       } else {
         operations.currentOperation.push(event.target.innerText) // иначе создаем новое число
       }
-      // стили нажатия кнопки
-      event.target.style.background = '#d8d8da'
-      setTimeout(() => event.target.style.background = '#F0F0F3', 150)
-
+      
       display(operations)
       return operations
     }

@@ -44,6 +44,13 @@
     
     outline: none;
     border: none;
+    cursor: pointer;
+
+    transition: .3s;
+    
+    &:hover {
+      background-color: #e3e3e6;
+    }
 
     // Верхний ряд клавиш====================================================================================
     &--clear,
@@ -53,7 +60,7 @@
 
     &--plus-minus {
       background: url(../img/plus-minus.svg) center 60% no-repeat;
-      background-size: 40%;
+      background-size: 35%;
     }
 
     // Клавиши операций над числами =========================================================================
@@ -70,6 +77,10 @@
       color: #F0F0F3;
 
       background: #2DD3C5;
+
+      &:hover {
+        background-color: #27bdb0;
+      }
     }
 
     &--zero {

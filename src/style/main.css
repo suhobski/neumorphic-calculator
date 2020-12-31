@@ -562,6 +562,13 @@ li {
   color: #728AB7;
   outline: none;
   border: none;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.keyboard__btn:hover {
+  background-color: #e3e3e6;
 }
 
 .keyboard__btn--clear, .keyboard__btn--percent {
@@ -570,7 +577,7 @@ li {
 
 .keyboard__btn--plus-minus {
   background: url(../img/plus-minus.svg) center 60% no-repeat;
-  background-size: 40%;
+  background-size: 35%;
 }
 
 .keyboard__btn--divide, .keyboard__btn--multiply, .keyboard__btn--minus, .keyboard__btn--plus {
@@ -582,6 +589,10 @@ li {
   font-size: 6vh;
   color: #F0F0F3;
   background: #2DD3C5;
+}
+
+.keyboard__btn--equal:hover {
+  background-color: #27bdb0;
 }
 
 .keyboard__btn--zero {

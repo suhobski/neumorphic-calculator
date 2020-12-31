@@ -4,6 +4,7 @@ let previousResult = document.querySelector('.display__previous-result')
 let currentOperation = document.querySelector('.display__current-operation')
 let currentResult = document.querySelector('.display__current-result')
 
+<<<<<<< Updated upstream
 let cor = []
 
 
@@ -195,3 +196,7 @@ function displayOperation() {
   currentOperation.innerText = ''
   cor.forEach(item => currentOperation.innerText += item) 
 }
+=======
+let calculator = new Calculator()
+calculator.compute()
+>>>>>>> Stashed changes

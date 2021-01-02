@@ -1,29 +1,29 @@
 import { printFields } from './display.js'
 
-export function operation(operations) {
+export function operation(state) {
   const operationButtons = document.querySelectorAll('[data-operation]')
 
   operationButtons.forEach(button => {
     button.addEventListener('click', () => {
-      let lastItem = operations.currentOperation[operations.currentOperation.length - 1] 
+      let lastItem = state.currentOperation[state.currentOperation.length - 1] 
 
       // Проверяем на наличие текущего результата. Если есть, меняем поля
-      if (operations.currentResult) {
-        operations.previousResult = operations.currentResult
-        operations.previousOperation = operations.currentOperation
-        operations.currentOperation = [operations.currentResult.substr(2), button.innerText]
-        operations.currentResult = ''
-        printFields(operations)
+      if (state.currentResult) {
+        state.previousResult = state.currentResult
+        state.previousOperation = state.currentOperation
+        state.currentOperation = [state.currentResult.substr(2), button.innerText]
+        state.currentResult = ''
+        printFields(state)
         return
       }
 
       // добавляем символ к массиву вычисления, если последний элемет массива число
       if (isFinite(lastItem)) {
-        operations.currentOperation.push(button.innerText)
+        state.currentOperation.push(button.innerText)
       }
 
-      printFields(operations)
-      return operations
+      printFields(state)
+      return state
     })
   })
 }

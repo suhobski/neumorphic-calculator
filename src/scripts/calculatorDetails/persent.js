@@ -1,22 +1,22 @@
 import { printFields } from './display.js'
 
-export function calculatorPersent(operations) {
+export function calculatorPersent(state) {
   const percent = document.querySelector('.keyboard__btn--percent')
   
   percent.addEventListener('click', () => {
-    let lastItem = operations.currentOperation[operations.currentOperation.length - 1] 
-    let lastIndex = operations.currentOperation.length - 1 
+    let lastItem = state.currentOperation[state.currentOperation.length - 1] 
+    let lastIndex = state.currentOperation.length - 1 
 
-    if (isFinite(lastIndex) && !operations.currentResult) {
-      if(operations.currentOperation.length > 2) {
-        operations.currentOperation[lastIndex] = operations.currentOperation[lastIndex-2] / 100 * operations.currentOperation[lastIndex] + ''
+    if (isFinite(lastIndex) && !state.currentResult) {
+      if(state.currentOperation.length > 2) {
+        state.currentOperation[lastIndex] = state.currentOperation[lastIndex-2] / 100 * state.currentOperation[lastIndex] + ''
       }
       if (lastIndex === 0 && isFinite(lastItem)) {
-        operations.currentOperation[0] /= 100 + ''
+        state.currentOperation[0] /= 100 + ''
       }
     }
 
-    printFields(operations)
-    return operations
+    printFields(state)
+    return state
   })
 }

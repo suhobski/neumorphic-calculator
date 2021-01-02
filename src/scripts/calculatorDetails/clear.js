@@ -1,23 +1,23 @@
 import { printFields } from './display.js'
 
-export function clear(operations) {
+export function clear(state) {
   const clear = document.querySelector('.keyboard__btn--clear')
   
   clear.addEventListener('click', () => {
-    operations.currentOperation = []
-    operations.currentResult = ''
+    state.currentOperation = []
+    state.currentResult = ''
 
-    if (clear.innerText === 'AC' && operations.previousResult) {
-      operations.previousResult = ''
-      operations.previousOperation = ''
+    if (clear.innerText === 'AC' && state.previousResult) {
+      state.previousResult = ''
+      state.previousOperation = ''
       clear.innerText = 'C'
     }
 
-    if (operations.previousResult) {
+    if (state.previousResult) {
       clear.innerText = 'AC'
     }
 
-    printFields(operations)
-    return operations
+    printFields(state)
+    return state
   })
 }

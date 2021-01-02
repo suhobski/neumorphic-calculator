@@ -9,7 +9,7 @@ import { printFields } from './calculatorDetails/display.js'
 
 export class Calculator {
   // State
-  operations = {
+  state = {
     'previousOperation': '',
     'previousResult': '',
     'currentOperation': [],
@@ -18,7 +18,7 @@ export class Calculator {
 
   // вывод на экран всех полей
   display() {
-    printFields(this.operations)
+    printFields(this.state)
   }
 
   // 
@@ -30,7 +30,7 @@ export class Calculator {
     keyboard.addEventListener('click', event => {
       if (event.target.hasAttribute('data-number')) {
         const number = event.target.innerText
-        calculatorNumbers(this.operations, number)
+        calculatorNumbers(this.state, number)
         this.display()
       }
     })
@@ -39,27 +39,27 @@ export class Calculator {
     document.addEventListener('keydown', event => {
       if (event.key.match(/\d/)) {
         const number = event.key
-        calculatorNumbers(this.operations, number)
+        calculatorNumbers(this.state, number)
         this.display()    
       }  
     });
 
     // ! ( + - * / )
-    operation(this.operations)
+    operation(this.state)
 
     // ( = )
-    equal(this.operations)
+    equal(this.state)
 
     // ( % )
-    calculatorPersent(this.operations)
+    calculatorPersent(this.state)
 
     // ( C )
-    clear(this.operations)
+    clear(this.state)
 
     // ( +/- )
-    plusMinus(this.operations)
+    plusMinus(this.state)
     
     // ( . )
-    dot(this.operations)
+    dot(this.state)
   } 
 }

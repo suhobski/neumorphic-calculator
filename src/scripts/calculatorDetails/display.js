@@ -1,4 +1,4 @@
-export function display(operations) {
+export function printFields(operations) {
   let previousOperationField = document.querySelector('.display__previous-operation')
   let previousResultField = document.querySelector('.display__previous-result')
   let currentOperationField = document.querySelector('.display__current-operation')

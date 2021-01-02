@@ -1,4 +1,4 @@
-import { display } from './display.js'
+import { printFields } from './display.js'
 
 export function operation(operations) {
   const operationButtons = document.querySelectorAll('[data-operation]')
@@ -13,7 +13,7 @@ export function operation(operations) {
         operations.previousOperation = operations.currentOperation
         operations.currentOperation = [operations.currentResult.substr(2), button.innerText]
         operations.currentResult = ''
-        display(operations)
+        printFields(operations)
         return
       }
 
@@ -22,7 +22,7 @@ export function operation(operations) {
         operations.currentOperation.push(button.innerText)
       }
 
-      display(operations)
+      printFields(operations)
       return operations
     })
   })

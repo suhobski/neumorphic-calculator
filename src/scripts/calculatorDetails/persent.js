@@ -1,4 +1,4 @@
-import { display } from './display.js'
+import { printFields } from './display.js'
 
 export function calculatorPersent(operations) {
   const percent = document.querySelector('.keyboard__btn--percent')
@@ -16,7 +16,7 @@ export function calculatorPersent(operations) {
       }
     }
 
-    display(operations)
+    printFields(operations)
     return operations
   })
 }

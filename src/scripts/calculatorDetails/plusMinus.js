@@ -1,4 +1,4 @@
-import { display } from './display.js'
+import { printFields } from './display.js'
 
 export function plusMinus(operations) {
   const plusMinus = document.querySelector('.keyboard__btn--plus-minus')
@@ -15,7 +15,7 @@ export function plusMinus(operations) {
       }
     }
 
-    display(operations)
+    printFields(operations)
     return operations
   })
 }

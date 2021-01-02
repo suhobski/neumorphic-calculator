@@ -1,4 +1,4 @@
-import { display } from './display.js'
+import { printFields } from './display.js'
 
 export function dot(operations) {
   const dot = document.querySelector('.keyboard__btn--dot')
@@ -14,7 +14,7 @@ export function dot(operations) {
       operations.previousOperation = operations.currentOperation
       operations.currentOperation = ['0.']
       operations.currentResult = ''
-      display(operations)
+      printFields(operations)
       return
     }
 
@@ -28,7 +28,7 @@ export function dot(operations) {
       operations.currentOperation[lastIndex] += '.'
     }
 
-    display(operations)
+    printFields(operations)
     return operations
   })
 }

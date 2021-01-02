@@ -1,4 +1,4 @@
-import { display } from './display.js'
+import { printFields } from './display.js'
 
 export function clear(operations) {
   const clear = document.querySelector('.keyboard__btn--clear')
@@ -17,7 +17,7 @@ export function clear(operations) {
       clear.innerText = 'AC'
     }
 
-    display(operations)
+    printFields(operations)
     return operations
   })
 }

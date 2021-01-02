@@ -1,4 +1,4 @@
-import { display } from './display.js'
+import { printFields } from './display.js'
 import { compute } from './compute.js'
 
 export function equal(operations) {
@@ -10,7 +10,7 @@ export function equal(operations) {
     if (isFinite(lastItem)) {
       let resultArray = Array.from(operations.currentOperation)
       operations.currentResult = '= ' + compute(resultArray)        
-      display(operations)
+      printFields(operations)
       return operations
     }
   })

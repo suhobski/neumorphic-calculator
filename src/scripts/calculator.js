@@ -1,6 +1,6 @@
 import { calculatorNumbers } from './calculatorDetails/numbers.js'
 import { equal } from './calculatorDetails/equal.js'
-import { calculatorPersent } from './calculatorDetails/persent.js'
+import { persent } from './calculatorDetails/persent.js'
 import { clear } from './calculatorDetails/clear.js'
 import { plusMinus } from './calculatorDetails/plusMinus.js'
 import { operation } from './calculatorDetails/operations.js'
@@ -26,7 +26,6 @@ export class Calculator {
     const keyboard = document.querySelector('.keyboard')
 
     // ввод чисел ===========================================================================================
-    //  через мышь
     keyboard.addEventListener('click', event => {
       if (event.target.hasAttribute('data-number')) {
         const number = event.target.innerText
@@ -35,31 +34,53 @@ export class Calculator {
       }
     })
 
-    // через клавиатуру
-    document.addEventListener('keydown', event => {
-      if (event.key.match(/\d/)) {
-        const number = event.key
-        calculatorNumbers(this.state, number)
+    // ( + - * / ) ==========================================================================================
+    keyboard.addEventListener('click', event => {
+      if (event.target.hasAttribute('data-operation')) {
+        const act = event.target.innerText
+        operation(this.state, act)
         this.display()    
-      }  
-    });
-
-    // ! ( + - * / )
-    operation(this.state)
+      }
+    })
 
     // ( = )
-    equal(this.state)
+    const equalButton = document.querySelector('.keyboard__btn--equal')
+
+    equalButton.addEventListener('click', () => {
+      equal(this.state)
+      this.display()    
+    })
 
     // ( % )
-    calculatorPersent(this.state)
+    const percentButton = document.querySelector('.keyboard__btn--percent')
+
+    percentButton.addEventListener('click', () => {
+      persent(this.state)
+      this.display()    
+    })
 
     // ( C )
-    clear(this.state)
+    const clearButton = document.querySelector('.keyboard__btn--clear')
+
+    clearButton.addEventListener('click', () => {
+      clear(this.state)
+      this.display()    
+    })
 
     // ( +/- )
-    plusMinus(this.state)
+    const plusMinusButton = document.querySelector('.keyboard__btn--plus-minus')
     
+    plusMinusButton.addEventListener('click', () => {
+      plusMinus(this.state)
+      this.display()    
+    })
+
     // ( . )
-    dot(this.state)
+    const dotButton = document.querySelector('.keyboard__btn--dot')
+
+    dotButton.addEventListener('click', () => {
+      dot(this.state)
+      this.display()    
+    })
   } 
 }

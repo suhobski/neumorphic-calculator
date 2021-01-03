@@ -10,7 +10,7 @@ export function compute(array) {
     if (array.length === 2) return array[0] + array[1]
   
     if (array.includes("×")) {
-      let index = array.indexOf("×")
+      let index = array.indexOf("×") 
       let result = parseFloat(array[index-1]) * parseFloat(array[index+1])
       array.splice(index-1, 3, String(Number(result.toFixed(12))))
       continue  

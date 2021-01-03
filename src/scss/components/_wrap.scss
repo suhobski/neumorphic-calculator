@@ -2,7 +2,7 @@
   position: relative;
 
   display: grid;
-  grid-template-rows: 3% minmax(400px, 768px) 7%;
+  grid-template-rows: 3% minmax(400px, 830px) 7%;
   grid-template-columns: 5% minmax(200px, 415px) 5%;
   align-content: center;
   justify-content: center;
@@ -15,17 +15,6 @@
   background-repeat: no-repeat;
   background-position: 30% 5%, 80% 80%;
   overflow: hidden;
-
-  &__calculator{
-    background-color: red;
-    width: 100%;
-    padding-top: 200%; /* 1:1 Aspect Ratio */
-    position: relative;
-
-    display: grid;
-    grid-column-start: 2;
-    grid-row-start: 2;
-  }
   
   &__rectanglle {
     @include figure-style;

@@ -16,6 +16,16 @@
   background-position: 30% 5%, 80% 80%;
   overflow: hidden;
 
+  &__calculator{
+    background-color: red;
+    width: 100%;
+    padding-top: 200%; /* 1:1 Aspect Ratio */
+    position: relative;
+
+    display: grid;
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
   
   &__rectanglle {
     @include figure-style;

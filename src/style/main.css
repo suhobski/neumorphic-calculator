@@ -404,6 +404,20 @@ li {
   overflow: hidden;
 }
 
+.wrap__calculator {
+  background-color: red;
+  width: 100%;
+  padding-top: 200%;
+  /* 1:1 Aspect Ratio */
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+}
+
 .wrap__rectanglle {
   background: #F0F0F3;
   -webkit-box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
@@ -460,14 +474,15 @@ li {
   -webkit-box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
           box-shadow: -10px -10px 30px #FFFFFF, 10px 10px 30px rgba(174, 174, 192, 0.4);
   border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 2fr;
       grid-template-rows: 1fr 2fr;
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-  -ms-grid-row: 2;
-      grid-row-start: 2;
   background: #2E2C2C;
   overflow: hidden;
   z-index: 30;

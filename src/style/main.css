@@ -468,6 +468,7 @@ li {
       grid-column-start: 2;
   -ms-grid-row: 2;
       grid-row-start: 2;
+  background: #2E2C2C;
   overflow: hidden;
   z-index: 30;
 }
@@ -522,6 +523,9 @@ li {
       grid-template-columns: repeat(4, 1fr);
   gap: 4%;
   padding: 0 12px 14px;
+  border-radius: 12px 12px 0 0;
+  background: #F0F0F3;
+  overflow: hidden;
 }
 
 .keyboard__rectangle {

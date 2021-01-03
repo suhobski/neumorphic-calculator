@@ -1,4 +1,5 @@
 export function clear(state) {
+  const clear = document.querySelector('.keyboard__btn--clear')
   
   state.currentOperation = []
   state.currentResult = ''

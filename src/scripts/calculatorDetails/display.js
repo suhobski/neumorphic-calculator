@@ -4,7 +4,7 @@ export function printFields(state) {
   let currentOperationField = document.querySelector('.display__current-operation')
   let currentResultField = document.querySelector('.display__current-result')
 
-  // убираем ноль из начального экрана
+  // remove zero from the initial screen
   if (state.currentOperation.length === 0) {
     currentOperationField.innerText = '0'
   } else {

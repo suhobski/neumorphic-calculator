@@ -6,7 +6,7 @@ export function dot(state) {
   let lastItem = state.currentOperation[state.currentOperation.length - 1] 
   let lastIndex = state.currentOperation.length - 1 
   
-  // если уже есть результат, тогда ничего не делаем
+  // if there is already a result, then we do nothing
   if (state.currentResult) {
     state.previousResult = state.currentResult
     state.previousOperation = state.currentOperation
@@ -16,13 +16,13 @@ export function dot(state) {
     return
   }
 
-  // если последнее значение не число
+  // if the last value is not a number
   if (!isFinite(lastItem)) {
     state.currentOperation.push('0.')
-    // !Меняем значение кнопки Clear
+    // Change the value of the Clear button
     if (clear.innerText === 'AC') clear.innerText = 'C'
 
-  } else if (!lastItem.includes('.')) { // если в последнем значении нет точки
+  } else if (!lastItem.includes('.')) { // if there is no dot in the last value
     state.currentOperation[lastIndex] += '.'
   }
 

@@ -3,7 +3,7 @@ export function calculatorNumbers(state, number) {
   let lastItem = state.currentOperation[state.currentOperation.length - 1] 
   let lastIndex = state.currentOperation.length - 1 
 
-  // Проверяем на наличие текущего результата. Если есть, меняем поля
+  // Checking for the current result. If so, change the fields
   if (state.currentResult) {
     state.previousResult = state.currentResult
     state.currentResult = ''
@@ -12,16 +12,16 @@ export function calculatorNumbers(state, number) {
     return state
   }
 
-  // не даем ввести число, если последнее число "0" 
+  // don't allow to enter a number if the last number is "0"
   if (lastItem === "0") {
     return
   }
   
-  // если последнее значение число или точка, тогда добавляем к числу еще одну цифру
+  // if the last value is a number or a point, then add another digit to the number
   if (isFinite(lastItem) || lastItem == '.') {
     state.currentOperation[lastIndex] += number
   } else {
-    state.currentOperation.push(number) // иначе создаем новое число
+    state.currentOperation.push(number) // otherwise we create a new number
   }
 
   return state

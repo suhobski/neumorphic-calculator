@@ -8,7 +8,7 @@ import { dot } from './calculatorDetails/dot.js'
 import { printFields } from './calculatorDetails/display.js'
 
 export class Calculator {
-  // State
+  // State =================================================================================================
   state = {
     'previousOperation': '',
     'previousResult': '',
@@ -16,16 +16,47 @@ export class Calculator {
     'currentResult': ''
   }
 
-  // вывод на экран всех полей
+  // print all fields ======================================================================================
   display() {
     printFields(this.state)
   }
 
-  // 
-  keyboard() {
+  // input numbers and operations ==========================================================================
+  calculate() {
+
+    //! input from keybord ==================================================================================
+    document.addEventListener('keydown', event => { // keyboard listener
+      if (event.key == +event.key) { // press digit button on keyboard
+        const number = event.key
+        calculatorNumbers(this.state, number)
+        this.display()
+  
+      } else if (event.key.match(/[\*\+/-]/)) { // press +-/* button on keyboard
+        operation(this.state, event.key)
+        this.display()
+      
+      } else if (event.key == '=' || event.key == 'Enter') { // press = button on keyboard
+        equal(this.state)
+        this.display() 
+      
+      } else if (event.key == 'Escape') { // press ESC button on keyboard
+        clear(this.state)
+        this.display()
+
+      } else if (event.key == '.') { // press ESC button on keyboard
+        dot(this.state)
+        this.display()  
+
+      } else if (event.key == '%') { // press ESC button on keyboard
+        persent(this.state)
+        this.display() 
+      }
+    })
+
+    //! touch input =========================================================================================
     const keyboard = document.querySelector('.keyboard')
 
-    // ввод чисел ===========================================================================================
+    // input numbers 
     keyboard.addEventListener('click', event => {
       if (event.target.hasAttribute('data-number')) {
         const number = event.target.innerText
@@ -34,7 +65,7 @@ export class Calculator {
       }
     })
 
-    // ( + - * / ) ==========================================================================================
+    // ( + - * / )
     keyboard.addEventListener('click', event => {
       if (event.target.hasAttribute('data-operation')) {
         const act = event.target.innerText
@@ -81,6 +112,6 @@ export class Calculator {
     dotButton.addEventListener('click', () => {
       dot(this.state)
       this.display()    
-    })
+    })    
   } 
 }

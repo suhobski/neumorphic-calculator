@@ -25,7 +25,7 @@ export class Calculator {
   calculate() {
 
     //! input from keybord ==================================================================================
-    document.addEventListener('keydown', event => { // keyboard listener
+    document.addEventListener('keydown', event => { // 
       if (event.key == +event.key) { // press digit button on keyboard
         const number = event.key
         calculatorNumbers(this.state, number)
@@ -35,7 +35,7 @@ export class Calculator {
         operation(this.state, event.key)
         this.display()
       
-      } else if (event.key == '=' || event.key == 'Enter') { // press = button on keyboard
+      } else if (event.key == '=' || event.key == 'Enter') { // press = or Enter button on keyboard
         equal(this.state)
         this.display() 
       
@@ -43,11 +43,11 @@ export class Calculator {
         clear(this.state)
         this.display()
 
-      } else if (event.key == '.') { // press ESC button on keyboard
+      } else if (event.key == '.') { // press dot ( . ) button on keyboard
         dot(this.state)
         this.display()  
 
-      } else if (event.key == '%') { // press ESC button on keyboard
+      } else if (event.key == '%') { // press % button on keyboard
         persent(this.state)
         this.display() 
       }
@@ -56,7 +56,7 @@ export class Calculator {
     //! touch input =========================================================================================
     const keyboard = document.querySelector('.keyboard')
 
-    // input numbers 
+    // press digit button on the screen
     keyboard.addEventListener('click', event => {
       if (event.target.hasAttribute('data-number')) {
         const number = event.target.innerText
@@ -65,7 +65,7 @@ export class Calculator {
       }
     })
 
-    // ( + - * / )
+    // press +-/* button on the screen 
     keyboard.addEventListener('click', event => {
       if (event.target.hasAttribute('data-operation')) {
         const act = event.target.innerText
@@ -74,7 +74,7 @@ export class Calculator {
       }
     })
 
-    // ( = )
+    // press equal ( = ) button on the screen
     const equalButton = document.querySelector('.keyboard__btn--equal')
 
     equalButton.addEventListener('click', () => {
@@ -82,7 +82,7 @@ export class Calculator {
       this.display()    
     })
 
-    // ( % )
+    // press % button on the screen
     const percentButton = document.querySelector('.keyboard__btn--percent')
 
     percentButton.addEventListener('click', () => {
@@ -90,7 +90,7 @@ export class Calculator {
       this.display()    
     })
 
-    // ( C )
+    // press (C) or (AC) button on the screen
     const clearButton = document.querySelector('.keyboard__btn--clear')
 
     clearButton.addEventListener('click', () => {
@@ -98,7 +98,7 @@ export class Calculator {
       this.display()    
     })
 
-    // ( +/- )
+    // press +/- button on the screen
     const plusMinusButton = document.querySelector('.keyboard__btn--plus-minus')
     
     plusMinusButton.addEventListener('click', () => {
@@ -106,7 +106,7 @@ export class Calculator {
       this.display()    
     })
 
-    // ( . )
+    // press dot ( . ) button on the screen
     const dotButton = document.querySelector('.keyboard__btn--dot')
 
     dotButton.addEventListener('click', () => {
